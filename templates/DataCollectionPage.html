@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS_style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>GIC Student Progress Data Collection</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('info') }}">Why We Collect Data</a></li>
+            <li><a href="{{ url_for('data_collection') }}">Data Collection Form</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label }} {{ field }}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <div class="alert alert-danger">{{ error }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p>GIC Student Progress Portal © 2024</p>
+    </footer>
+</body>
+</html>

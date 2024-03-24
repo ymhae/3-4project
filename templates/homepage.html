@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS_style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to GIC Student Progress Portal</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Glasgow International College Student Progress Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('info') }}">Why We Collect Data</a></li>
+            <li><a href="{{ url_for('data_collection') }}">Data Collection Form</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <p>This website is designed to assess and collect data on students' progress at GIC. Navigate through our site to learn more about our data collection initiative and participate in our questionnaire to contribute to the improvement of academic and overall student experience at GIC.</p>
+        </section>
+    </main>
+    <footer>
+        <p>GIC Student Progress Portal © 2024</p>
+    </footer>
+</body>
+</html>
